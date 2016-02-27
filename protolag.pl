@@ -40,7 +40,7 @@ my $dev = $list[0];
 
 my ($address, $netmask);
 if (Net::Pcap::lookupnet($dev, \$address, \$netmask, \$err)) {
-    die 'Unable to look up device information for ', $dev, ' - ', $err;
+    warn 'Unable to look up device information for ', $dev, ' - ', $err;
 }
 printf("Sniffing interface %s/%s\n", join(".", unpack "C4", pack "N",$address), join(".", unpack "C4", pack "N",$netmask));
 
