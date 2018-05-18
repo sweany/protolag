@@ -38,7 +38,7 @@ my $dev = $list[0];
 #    die 'Unable to determine network device for monitoring - ', $err;
 #}
 
-my ($address, $netmask);
+my ($address, $netmask) = (0,0);
 if (Net::Pcap::lookupnet($dev, \$address, \$netmask, \$err)) {
     warn 'Unable to look up device information for ', $dev, ' - ', $err;
 }
